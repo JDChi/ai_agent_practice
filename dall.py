@@ -1,12 +1,15 @@
 import os
 import openai
 
-open_ai_host = os.environ.get("OPEN_AI_HOST")
-open_ai_api_key = os.environ.get("OPEN_AI_API_KEY")
+from dotenv import load_dotenv
+load_dotenv()
+
+openai_host = os.environ.get("OPENAI_HOST")
+openai_api_key = os.environ.get("OPENAI_API_KEY")
 
 client = openai.OpenAI(
-    base_url=open_ai_host,
-    api_key=open_ai_api_key
+    base_url=openai_host,
+    api_key=openai_api_key
 )
 
 response = client.images.generate(

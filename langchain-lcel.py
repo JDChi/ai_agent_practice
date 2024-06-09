@@ -3,6 +3,9 @@ from langchain_core.output_parsers import StrOutputParser # 用于将输出结�
 from langchain_core.prompts import ChatPromptTemplate # 用于创建聊天提示模板
 from langchain_openai import ChatOpenAI
 
+from dotenv import load_dotenv
+load_dotenv()
+
 openai_host = os.environ.get("OPENAI_HOST")
 openai_api_key = os.environ.get("OPENAI_API_KEY")
 
