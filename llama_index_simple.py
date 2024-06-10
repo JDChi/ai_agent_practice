@@ -10,6 +10,8 @@ load_dotenv()
 doc = SimpleDirectoryReader("./assets").load_data()
 # 为文档建立索引
 index = VectorStoreIndex.from_documents(doc)
+# 将索引保存到本地
+index.storage_context.persist()
 
 query_engine = index.as_query_engine()
 
@@ -18,6 +20,8 @@ response = query_engine.query("这篇新闻主要讲了什么？请用中文回�
 print("这篇新闻主要讲了：", response)
 response = query_engine.query("是什么让印度的黄金成本大增？")
 print("让印度的黄金成本大增的原因是：", response)
+
+
 
 
 
