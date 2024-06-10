@@ -4,13 +4,7 @@ import openai
 from dotenv import load_dotenv
 load_dotenv()
 
-openai_host = os.environ.get("OPENAI_API_BASE")
-openai_api_key = os.environ.get("OPENAI_API_KEY")
-
-client = openai.OpenAI(
-    base_url=openai_host,
-    api_key=openai_api_key
-)
+client = openai.OpenAI()
 
 response = client.images.generate(
     model="dall-e-3",
