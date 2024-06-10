@@ -5,7 +5,7 @@ from langchain.schema.output_parser import  StrOutputParser
 from dotenv import load_dotenv
 load_dotenv()
 
-openai_host = os.environ.get("OPENAI_HOST")
+openai_host = os.environ.get("OPENAI_API_BASE")
 openai_api_key = os.environ.get("OPENAI_API_KEY")
 
 model = ChatOpenAI(model="gpt-4", openai_api_key=openai_api_key, openai_api_base=openai_host)

@@ -4,7 +4,7 @@ import openai
 from dotenv import load_dotenv
 load_dotenv()
 
-openai_host = os.environ.get("OPENAI_HOST")
+openai_host = os.environ.get("OPENAI_API_BASE")
 openai_api_key = os.environ.get("OPENAI_API_KEY")
 
 client = openai.OpenAI(
