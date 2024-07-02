@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # 从 assets 文件夹里获取资源
-doc = SimpleDirectoryReader("./assets").load_data()
+doc = SimpleDirectoryReader("../assets").load_data()
 # 为文档建立索引
 index = VectorStoreIndex.from_documents(doc)
 # 将索引保存到本地
